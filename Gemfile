@@ -1,9 +1,13 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
 
 # Specify your gem's dependencies in pivotal_git_scripts.gemspec
 gemspec
 
-gem "rake"
-gem "bundler"
-gem "rspec"
-gem "unindent"
+gem 'bundler'
+gem 'rake'
+gem 'rspec'
+gem 'rubocop'
+gem 'ruby-lsp'
+gem 'unindent'

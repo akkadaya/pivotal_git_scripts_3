@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
+
+# frozen_string_literal: true
+
 $LOAD_PATH.unshift(File.dirname(__FILE__)) # this is required when running from /usr/local/bin
 require 'pivotal_git_scripts/git_pair'
 

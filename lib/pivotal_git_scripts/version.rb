@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PivotalGitScripts
-  VERSION = "1.4.0"
+  VERSION = '3.0.0'
 end

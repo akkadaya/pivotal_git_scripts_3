@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'pivotal_git_scripts/git_pair'
 
 describe PivotalGitScripts::GitPair::Runner do
@@ -39,14 +41,14 @@ describe PivotalGitScripts::GitPair::Runner do
         }
       }
 
-      names = runner.read_author_info_from_config(config, ['aa', 'tt'])
+      names = runner.read_author_info_from_config(config, %w[aa tt])
       names.should =~ ['An Aardvark', 'The Turtle']
     end
 
     it 'exits when initials cannot be found' do
-      expect {
-        runner.read_author_info_from_config({"pairs" => {}}, ['aa'])
-      }.to raise_error(PivotalGitScripts::GitPair::GitPairException)
+      expect do
+        runner.read_author_info_from_config({ 'pairs' => {} }, ['aa'])
+      end.to raise_error(PivotalGitScripts::GitPair::GitPairException)
     end
   end
 end
