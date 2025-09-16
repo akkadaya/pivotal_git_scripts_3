@@ -8,16 +8,15 @@ Gem::Specification.new do |s|
   s.version     = PivotalGitScripts::VERSION
   s.authors     = ['Pivotal Labs']
   s.email       = ['gems@pivotallabs.com']
-  s.homepage    = 'http://github.com/pivotal/git_scripts'
+  s.homepage    = 'https://github.com/akkadaya/pivotal_git_scripts_3'
   s.summary     = 'Developer git workflow convenience scripts'
   s.description = 'These scripts are helpers for managing developer workflow when using git repos hosted on GitHub.'
 
-  s.rubyforge_project = 'pivotal_git_scripts_3'
-  s.required_ruby_version = '>=3'
+  s.required_ruby_version = '>= 3.0'
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
+  s.files         = Dir.glob('{lib,bin}/**/*') + %w[README.md MIT.LICENSE CHANGELOG.md]
+  s.test_files    = Dir.glob('{test,spec,features}/**/*')
+  s.executables   = Dir.glob('bin/*').map { |f| File.basename(f) }
   s.require_paths = ['lib']
   s.license       = 'MIT'
 
